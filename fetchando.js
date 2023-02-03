@@ -82,7 +82,7 @@ const readFromImageFile = async(url, fileName) => {
             // saveData(base64Image, "ImageBase64");
             // await splitImage(base64Image);
             let response = await makeRequestBase64Img(url, base64Image);
-            return (`${getTime()} --> ${response}`);
+            return (colors.green(`${getTime()} --> ${response}`));
 
 
         })
@@ -96,24 +96,24 @@ const readFromImageFile = async(url, fileName) => {
 
 const StartRequests = async() => {
     //Possible URLs
-    let url_1 = 'https://nodebackendproject.azurewebsites.net/phone-big-img?';
-    let url_2 = 'https://nodebackendproject.azurewebsites.net/drone-big-img?';
-    let url_3 = 'https://nodebackendproject.azurewebsites.net/drone-big-img/yolov5?';
-    let url_4 = 'https://nodebackendproject.azurewebsites.net/drone-big-img/roboflow?';
-    let url_5 = 'https://nodebackendproject.azurewebsites.net/drone-big-img/yolov5-cropped?';
-    let url_6 = 'https://nodebackendproject.azurewebsites.net/drone-big-img/roboflow-cropped?';
-    // let url_1 = 'http:localhost:8080/phone-big-img?';
-    // let url_2 = 'http:localhost:8080/drone-big-img?';
-    // let url_3 = 'http:localhost:8080/drone-big-img/yolov5?';
-    // let url_4 = 'http:localhost:8080/drone-big-img/roboflow?';
+    // let url_1 = 'https://nodebackendproject.azurewebsites.net/phone-big-img?';
+    // let url_2 = 'https://nodebackendproject.azurewebsites.net/drone-big-img?';
+    // let url_3 = 'https://nodebackendproject.azurewebsites.net/drone-big-img/yolov5?';
+    // let url_4 = 'https://nodebackendproject.azurewebsites.net/drone-big-img/roboflow?';
+    // let url_5 = 'https://nodebackendproject.azurewebsites.net/drone-big-img/yolov5-cropped?';
+    // let url_6 = 'https://nodebackendproject.azurewebsites.net/drone-big-img/roboflow-cropped?';
+    let url_1 = 'http:localhost:8080/phone-big-img?';
+    let url_2 = 'http:localhost:8080/drone-big-img?';
+    let url_3 = 'http:localhost:8080/drone-big-img/yolov5?';
+    let url_4 = 'http:localhost:8080/drone-big-img/roboflow?';
+    let url_5 = 'http:localhost:8080/drone-big-img/yolov5-cropped?';
+    let url_6 = 'http:localhost:8080/drone-big-img/roboflow-cropped?';
 
     const phonePicture = "phonetest.jpg";
     const dronePicture = "dronetest.jpg";
     const droneSubPicture = "dronetest-sub-1.jpg";
 
     console.log(`\n\n\n Starting at ${getTime()}`);
-
-    console.log('This is okay!'.green);
 
     console.log(await readFromImageFile(url_1, phonePicture));
     console.log(await readFromImageFile(url_5, droneSubPicture));
